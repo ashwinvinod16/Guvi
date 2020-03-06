@@ -1,0 +1,30 @@
+table{
+    
+        width: 300px;
+        border: 15px solid black;
+        padding: 50px;
+        margin: 20px;
+}
+#div1{
+    float: left;
+    width:50%;
+    margin: auto;
+}
+#div2{
+    float: right;
+    width: 50%;
+    margin:auto
+}
+.btn{
+    margin-left: 10%;
+    width: 20%;
+    height: 7% ;
+    font-size: 150%;
+
+}
+.cls{
+    margin-left: 30%;
+    width: 20%;
+    height: 7% ;
+    font-size: 150%;
+}

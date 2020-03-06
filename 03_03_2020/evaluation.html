@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <style>
+            td{
+                width: 20%;
+                font-size: 100%;
+            }
+            table,td {
+            padding: 10px;
+            border: 1px solid black; 
+            border-collapse: collapse;
+            }
+        </style>
+    </head>
+   
+    <body>
+        <div style="width: 50%;float: left;">
+            <h2>Team 1 Scorecard</h2>
+            <table>
+                <tr><td style="font-weight: bold;">Players</td><td style="font-weight: bold;">Score</td></tr>
+                <tr><td>Player1</td><td id="id0"></td></tr>
+                <tr><td>Player2</td><td id="id1"></td></tr>
+                <tr><td>Player3</td><td id="id2"></td></tr>
+                <tr><td>Player4</td><td id="id3"></td></tr>
+                <tr><td>Player5</td><td id="id4"></td></tr>
+                <tr><td>Player6</td><td id="id5"></td></tr>
+                <tr><td>Player7</td><td id="id6"></td></tr>
+                <tr><td>Player8</td><td id="id7"></td></tr>
+                <tr><td>Player9</td><td id="id8"></td></tr>
+                <tr><td>Player10</td><td id="id9"></td></tr>
+                <tr><td>Player11</td><td id="id10"></td></tr>
+                <tr><td style="font-weight: bold;">Total Score</td><td id="scr1" style="font-weight: bold;"></td></tr>
+
+            </table>
+        </div>
+        <div style="width: 50%;float: right;">
+            <h2>Team 2 Scorecard</h2>
+            <table>
+                <tr><td style="font-weight: bold;">Players</td><td style="font-weight: bold;">Score</td></tr>
+                <tr><td>Player1</td><td id="ld0"></td></tr>
+                <tr><td>Player2</td><td id="ld1"></td></tr>
+                <tr><td>Player3</td><td id="ld2"></td></tr>
+                <tr><td>Player4</td><td id="ld3"></td></tr>
+                <tr><td>Player5</td><td id="ld4"></td></tr>
+                <tr><td>Player6</td><td id="ld5"></td></tr>
+                <tr><td>Player7</td><td id="ld6"></td></tr>
+                <tr><td>Player8</td><td id="ld7"></td></tr>
+                <tr><td>Player9</td><td id="ld8"></td></tr>
+                <tr><td>Player10</td><td id="ld9"></td></tr>
+                <tr><td>Player11</td><td id="ld10"></td></tr>
+                <tr><td style="font-weight: bold;">Total Score</td><td id="scr2" style="font-weight: bold;"></td></tr>
+            </table>
+        </div>
+        <div style="padding-top: 20%;">
+            <h1 id="result" style="font-size:300%; padding-left: 34%;"></h1>
+        </div>
+        <script>
+            team1=JSON.parse(localStorage.getItem('score1'))
+            team2=JSON.parse(localStorage.getItem('score2'))
+            
+            if(team1.score1>team2.score1){
+                console.log("team1")
+                document.getElementById("result").innerHTML= "Team1 wins";
+            }
+            else{
+                console.log("team2")
+                document.getElementById("result").innerHTML= "Team2 wins";
+            }
+            
+            for(var x=0;x<11;x++){
+                document.getElementById("id"+x).innerHTML=team1.player[x];
+            }
+
+            for(var x=0;x<11;x++){
+                document.getElementById("ld"+x).innerHTML=team2.player[x];
+            }
+            document.getElementById("scr1").innerHTML=team1.score1;
+            document.getElementById("scr2").innerHTML=team2.score1;
+        </script>   
+    </body>
+</html>
