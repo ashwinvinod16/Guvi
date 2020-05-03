@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title></title>
+</head>
+
+<body>
+  <div class="division">
+    <img src="letter1.jpg" alt="letter image">
+    <p class="para"><strong>Sign up to My<br>Newsletter!</strong></p>
+    <form >
+      <input id="firstname" class="inp" type="text" name="firstname" placeholder="First Name" required><br>
+      <input id="lastname" class="inp " type="text" name="lastname" placeholder="Last Name" required><br>
+      <input id="emailid" class="inp" type="email" name="emailid" placeholder="Email" required><br>
+      <input  class="inp1" type="submit" onclick="senddata();return false;" value="Sign Up" required>
+      <input  class="inp1" type="submit" onclick="update();return false;" value="Update" required>
+      <input  class="inp1" type="submit" onclick="removedata();return false;" value="Delete" required>
+    </form>
+    <p class="para1">© Made with ❤️Ashwin</p>
+  </div>
+  <script>
+    function senddata() {
+      alert("submitted");
+      var data = {
+        firstname: document.getElementById('firstname').value,
+        lastname: document.getElementById('lastname').value,
+        email: document.getElementById('emailid').value
+      }
+      fetch("http://localhost:4040/users", {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+             Accept: "application/json",
+            'Content-Type': 'application/json'
+          }
+        }).then(function(data) {
+          console.log(data);
+        })
+        .catch(function(err) {
+          console.error(err);
+        })
+    }
+
+  function update() {
+      alert("updated");
+      var data = {
+        firstname: document.getElementById('firstname').value,
+        lastname: document.getElementById('lastname').value,
+        email: document.getElementById('emailid').value
+      }
+      fetch("http://localhost:4040/users-update", {
+          method: 'PUT',
+          body: JSON.stringify(data),
+          headers: {
+             Accept: "application/json",
+            'Content-Type': 'application/json'
+          }
+        }).then(function(data) {
+          console.log(data);
+        })
+        .catch(function(err) {
+          console.error(err);
+        })
+    }
+
+  function removedata() {
+        alert("deleted");
+        var data = {
+          firstname: document.getElementById('firstname').value,
+          lastname: document.getElementById('lastname').value,
+          email: document.getElementById('emailid').value
+        }
+        fetch("http://localhost:4040/users-delete", {
+            method: 'DELETE',
+            body: JSON.stringify(data),
+            headers: {
+               Accept: "application/json",
+              'Content-Type': 'application/json'
+            }
+          }).then(function(data) {
+            console.log(data);
+          })
+          .catch(function(err) {
+            console.error(err);
+          })
+      }
+  </script>
+</body>
+
+</html>
