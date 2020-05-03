@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Productapp</title>
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- css styling -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- fontAwsome icon -->
+  <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+
+
+  <!-- Bootstrap js code -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<!-- //nav bar -->
+
+<div class="container-fluid title1">
+
+  <!-- Nav Bar -->
+  <nav class="navbar  navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="">Productapp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./login.html">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+ <div class="form1">
+   <h2>Create Account</h2>
+  <form id="myform" class="regmyform" onsubmit="Register();return false;">
+    <div class="form-group">
+    <input class="field" id="name" type="text" placeholder="Name" value="" required><br>
+    </div>
+    <div class="form-group">
+    <input class="field" id="age" type="text" placeholder="Age" value="" required><br>
+    </div>
+    <div class="form-group">
+    <input class="field" id="gender" type="text" placeholder="Gender" value="" required><br>
+    </div>
+    <div class="form-group">
+    <input class="field" id="Email" type="email" placeholder="Email" value="" required><br>
+    </div>
+    <div class="form-group">
+    <input class="field" id="con-num" type="number" placeholder="Contact Number" value="" required><br>
+    </div>
+    <div class="form-group">
+    <input class="field" id="pass" type="password" placeholder="password" required><br>
+    </div>
+    <div class="form-group">
+    <input type="submit" value="Sign Up">
+    </div>
+  </form>
+
+  </div>
+  <script>
+    function Register() {
+      var data = {
+        Name: document.getElementById('name').value,
+        Age: document.getElementById('age').value,
+        Gender: document.getElementById('gender').value,
+        email: document.getElementById('Email').value,
+        Contact: document.getElementById('con-num').value,
+        password: document.getElementById('pass').value
+      }
+      fetch("http://localhost:4040/user-registration", {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            Accept: "application/json",
+            'Content-Type': 'application/json'
+          }
+        }).then(function(data) {
+          console.log(data)
+        })
+        .catch(function(err) {
+          console.log(err);
+        })
+      alert("succesfully registered ");
+      document.getElementById("myForm").reset();
+
+    }
+  </script>
+</body>
+
+</html>

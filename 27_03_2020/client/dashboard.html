@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body onload="load()">
+  <h1 id="intro">WELCOME</h1>
+</body>
+<script>
+  async function load() {
+    var token = window.localStorage.getItem('jwttoken');
+     var resdata = await fetch("http://localhost:4040/dashboard-user", {
+      method: 'GET',
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        'Authorization': token
+      }
+    });
+
+
+    var response = await resdata.json();
+    console.log(response);
+
+    var name = await response.userdata.Name;
+    console.log(name);
+
+    document.getElementById('intro').innerHTML="Welcome  "+name;
+
+  }
+</script>
+
+</html>
