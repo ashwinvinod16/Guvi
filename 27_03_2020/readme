@@ -1,1 +1,3 @@
-
+express and mongodb used to create login and signup using bcrypt hashing
+JWT token
+login and fetch data with jwt token
