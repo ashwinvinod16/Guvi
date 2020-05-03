@@ -1,0 +1,36 @@
+.inp{
+  height: 30px;
+  width: 400px;
+  margin-bottom: 10px;
+  margin-left:150px;
+  border: solid;
+}
+.para{
+  font-size: 25px;
+  text-align: center;
+}
+img{
+  margin-left:43%;
+  margin-top:20%;
+  height: 100px;
+}
+.division{
+  width: 700px;
+  height: 600px;
+  margin: auto;
+  }
+body{
+  background-color: #ecfbfc;
+}
+.para1{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 20px;
+}
+.inp1{
+  height: 36px;
+  width: 406px;
+  margin-left:150px;
+  background-color: #413c69;
+  color:red;
+}

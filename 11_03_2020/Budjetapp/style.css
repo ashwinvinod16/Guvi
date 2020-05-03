@@ -1,0 +1,91 @@
+.firstrow{
+  float:left;
+  width: 35%;
+  margin-left: 10px;
+
+}
+.firstrow1{
+  width: 20%;
+  text-align: center;
+  margin: auto;
+}
+.secondrow{
+  float:left;
+  width: 35%;
+  margin-left: 10px;
+}
+.secondrow1{
+  width:20%;
+  text-align: center;
+  margin: auto;
+}
+.mainbox{
+  border: solid;
+  border-color: green;
+  padding-left: 10px
+}
+.mainbox1{
+  border: solid;
+  border-color: red;
+  margin-top: 16px;
+  padding-left: 10px;
+  margin-top:0px;
+}
+img{
+  width: 70px;
+  height: 40px;
+}
+h3{
+  margin-top: 0px;
+}
+.greenword{
+  color: green;
+  font-size: 30px;
+}
+.redword{
+  color: red;
+  font-size: 30px;
+}
+.gtextbox{
+  width:300px;
+  height: 20px;
+  border-color:green;
+}
+.rtextbox{
+  width:300px;
+  height: 20px;
+  border-color:red;
+  margin-bottom:10px;
+}
+.addexpense{
+  border-color: red;
+  font-size:20px;
+  color:red;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.calculate{
+  border-color: green;
+  font-size:20px;
+  color:green;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.expense{
+  font-size: 25px;
+  margin-top:0;
+  margin-bottom:50px;
+}
+.red{
+  color:red;
+
+}
+.btn{
+  margin-top:73.5px;
+  margin-bottom: 16px;
+}
+.btn1{
+  color:red;
+  border-color:transparent;
+  font-size:15px;
+}
